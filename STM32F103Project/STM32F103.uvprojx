@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\APP;..\BSP;..\CHAL;..\Driver;..\APP\inc;..\Driver\inc</IncludePath>
+              <IncludePath>..\APP;..\BSP;..\CHAL;..\Driver;..\APP\inc;..\Driver\inc;..\CHAL\inc;..\CHAL\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -424,6 +424,11 @@
               <FileName>CHAL_led.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\CHAL\inc\CHAL_led.h</FilePath>
+            </File>
+            <File>
+              <FileName>CHAL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\CHAL\inc\CHAL.h</FilePath>
             </File>
           </Files>
         </Group>
