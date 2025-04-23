@@ -461,14 +461,14 @@
               <FilePath>..\Driver\system_stm32f10x.h</FilePath>
             </File>
             <File>
-              <FileName>ZF_gpio.c</FileName>
+              <FileName>LF_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\src\ZF_gpio.c</FilePath>
+              <FilePath>..\Driver\src\LF_gpio.c</FilePath>
             </File>
             <File>
-              <FileName>ZF_gpio.h</FileName>
+              <FileName>LF_gpio.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Driver\inc\ZF_gpio.h</FilePath>
+              <FilePath>..\Driver\inc\LF_gpio.h</FilePath>
             </File>
           </Files>
         </Group>

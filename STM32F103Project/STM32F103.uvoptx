@@ -373,8 +373,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Driver\src\ZF_gpio.c</PathWithFileName>
-      <FilenameWithoutPath>ZF_gpio.c</FilenameWithoutPath>
+      <PathWithFileName>..\Driver\src\LF_gpio.c</PathWithFileName>
+      <FilenameWithoutPath>LF_gpio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -385,8 +385,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Driver\inc\ZF_gpio.h</PathWithFileName>
-      <FilenameWithoutPath>ZF_gpio.h</FilenameWithoutPath>
+      <PathWithFileName>..\Driver\inc\LF_gpio.h</PathWithFileName>
+      <FilenameWithoutPath>LF_gpio.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
