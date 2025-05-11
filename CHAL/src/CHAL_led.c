@@ -25,6 +25,16 @@ void CHAL_LedBlink(void)
     delay = 9000000;
 }
 
+void CHAL_Buzzer(void)
+{
+    uint32_t delay = 900000;
+    while(delay--) {}
+    GPIO_Set(GPIO_B,12);
+    delay = 9000000;
+    while(delay--) {}
+    GPIO_Reset(GPIO_B,12);
+}
+
 uint16_t temp = 0;
 void CHAL_LedFlow(void)
 {
@@ -32,26 +42,10 @@ void CHAL_LedFlow(void)
     static uint16_t i = 0;
 
     while(delay--) {}
-    //方法1.操作设置/清除寄存器
-    // if(i<5)
-    // {
-    //     temp = (1<<i);
-    //     GPIOA->BRR  = temp; 
-    //     GPIOA->BSRR = temp>>1; 
-    //     i++;
-    // }
-    // else
-    // {
-    //     i = 0;
-    //     temp = (1<<i);
-    //     GPIOA->BRR  = temp; 
-    //     GPIOA->BSRR = temp<<4; 
-    //     i++;
-    // }
-    //方法2：操作ODR寄存器
+
     GPIOA->ODR = ~(0x0001<<i);
     i++;
-    if(i>4)
+    if(i>2)
     {
         i = 0;
     }
