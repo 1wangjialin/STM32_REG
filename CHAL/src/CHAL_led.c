@@ -1,6 +1,8 @@
 #include "CHAL_led.h"
 #include "LF_gpio.h"
 
+#define delaytime   900000
+
 void CHAL_LedInit(void)
 {
     GPIO_Init();
@@ -23,6 +25,36 @@ void CHAL_LedBlink(void)
     GPIO_Reset(GPIO_A,3);
     GPIO_Reset(GPIO_A,4);
     delay = 9000000;
+}
+
+void CHAL_LedKey(void)
+{
+    uint32_t delay = delaytime;
+    if(!(GPIOB->IDR & 0x1))
+    {
+        GPIO_Reset(GPIO_A,0);
+        while(delay--);
+        delay = delaytime;
+    }
+    else if(GPIOB->IDR & 0x1)
+    {
+        GPIO_Set(GPIO_A,0);
+        while(delay--);
+        delay = delaytime;
+    }
+
+    if(!(GPIOB->IDR & 0x400))
+    {
+        GPIO_Reset(GPIO_A,1);
+        while(delay--);
+        delay = delaytime;
+    }
+    else if(GPIOB->IDR & 0x400)
+    {
+        GPIO_Set(GPIO_A,1);
+        while(delay--);
+        delay = delaytime;
+    }
 }
 
 void CHAL_Buzzer(void)

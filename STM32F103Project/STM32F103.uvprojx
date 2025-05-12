@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\APP;..\BSP;..\CHAL;..\Driver;..\APP\inc;..\Driver\inc;..\CHAL\inc;..\CHAL\src</IncludePath>
+              <IncludePath>..\APP;..\BSP;..\BSP\src;..\BSP\inc;..\CHAL;..\Driver;..\APP\inc;..\Driver\inc;..\CHAL\inc;..\CHAL\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -410,6 +410,21 @@
               <FileType>5</FileType>
               <FilePath>..\BSP\inc\BSP_led.h</FilePath>
             </File>
+            <File>
+              <FileName>OLED_Font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\inc\OLED_Font.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\inc\OLED.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\src\OLED.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -429,6 +444,16 @@
               <FileName>CHAL.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\CHAL\inc\CHAL.h</FilePath>
+            </File>
+            <File>
+              <FileName>CHAL_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\CHAL\src\CHAL_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>CHAL_timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\CHAL\inc\CHAL_timer.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -474,6 +499,16 @@
               <FileName>LF_gpio.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Driver\inc\LF_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>misc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\misc.c</FilePath>
+            </File>
+            <File>
+              <FileName>misc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\misc.h</FilePath>
             </File>
           </Files>
         </Group>

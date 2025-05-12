@@ -4,14 +4,22 @@ void GPIO_Init(void)
 {
     RCC->APB2ENR |= (1<<2);  //使能GPIOA时钟
     RCC->APB2ENR |= (1<<3);  //使能GPIOB时钟
-    GPIOA->CRL |= (3<<0);   //PA0推挽输出50MHZ模式
-    GPIOA->CRL |= (3<<4);   //PA1推挽输出50MHZ模式
-    GPIOA->CRL |= (3<<8);   //PA2推挽输出50MHZ模式
-    GPIOA->CRL |= (3<<12);  //PA3推挽输出50MHZ模式
-    GPIOA->CRL |= (3<<16);  //PA4推挽输出50MHZ模式
-    GPIOB->CRH |= (3<<16);  //PB12推挽输出50MHZ模式
-    GPIOA->BSRR = 0xff;     //PA0~PA4输出高电平
-    GPIOB->BSRR |= (1<<12);     //PA0~PA4输出高电平
+    GPIOA->CRL |= (3<<0);    //PA0推挽输出50MHZ模式
+    GPIOA->CRL |= (3<<4);    //PA1推挽输出50MHZ模式
+    GPIOA->CRL |= (3<<8);    //PA2推挽输出50MHZ模式
+    GPIOA->CRL |= (3<<12);   //PA3推挽输出50MHZ模式
+    GPIOA->CRL |= (3<<16);   //PA4推挽输出50MHZ模式
+    GPIOB->CRH |= (3<<16);   //PB12推挽输出50MHZ模式
+
+    GPIOB->CRL |= (1<<3);    //PB0上拉输入模式
+    GPIOB->CRL &= ~(1<<2);    //PB0上拉输入模式
+    GPIOB->CRH |= (1<<11);    //PB10上拉输入模式
+    GPIOB->CRH &= ~(1<<10);    //PB10上拉输入模式
+
+    GPIOA->BSRR = 0xff;      //PA0~PA4输出高电平
+    GPIOB->BSRR |= (1<<12);  //PA0~PA4输出高电平
+    GPIOB->BSRR |= (1<<0);  //PA0~PA4输出高电平
+    GPIOB->BSRR |= (1<<10);  //PA0~PA4输出高电平
 }
 
 void GPIO_Set(GPIOX gpiox, uint8_t pin)

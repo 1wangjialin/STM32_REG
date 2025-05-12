@@ -8,6 +8,7 @@ void CHAL_LedInit(void);
 void CHAL_LedBlink(void);
 void CHAL_LedFlow(void);
 void CHAL_Buzzer(void);
+void CHAL_LedKey(void);
 
 
 
