@@ -7,15 +7,18 @@ int main (void)
 {
     // CHAL_LedInit();
 	OLED_Init();
-	Timer2_Init();
+	// Timer2_Init();
+	Timer2_EXInit();
 	/*显示静态字符串*/
 	OLED_ShowString(1, 1, "Num:");			//1行1列显示字符串Num:
+	OLED_ShowString(2, 1, "CNT:");			//2行1列显示字符串CNT:
 	while(1)
 	{
         // CHAL_LedFlow();
 		// CHAL_Buzzer();
 		// CHAL_LedKey();
 		OLED_ShowNum(1, 5, Num, 5);			//不断刷新显示Num变量
+		OLED_ShowNum(2, 5, TIM2->CNT, 5);		//不断刷新显示CNT的值
 	}
 }
 

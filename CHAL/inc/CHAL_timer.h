@@ -7,7 +7,7 @@
 
 
 void Timer2_Init(void);
-
+void Timer2_EXInit(void);
 
 
 
