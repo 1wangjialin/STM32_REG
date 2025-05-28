@@ -1,24 +1,5 @@
 #include "stm32f10x.h"
 #include "OLED_Font.h"
-#include "LF_gpio.h"
-
-typedef enum
-{ Bit_RESET = 0,
-  Bit_SET
-}BitAction;
-
-void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal)
-{
-	if (BitVal != Bit_RESET)
-	{
-		GPIOx->BSRR = GPIO_Pin;
-	}
-	else
-	{
-		GPIOx->BRR = GPIO_Pin;
-	}
-}
-
 
 /*引脚配置*/
 #define OLED_W_SCL(x)		GPIO_WriteBit(GPIOB, GPIO_Pin_8, (BitAction)(x))
@@ -27,10 +8,16 @@ void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal)
 /*引脚初始化*/
 void OLED_I2C_Init(void)
 {
-    RCC->APB2ENR |= (1<<3);  //使能GPIOB时钟
-	GPIOB->CRH |= (7<<0);   //PB8开漏输出50MHZ模式
-	GPIOB->CRH |= (7<<4);   //PB9开漏输出50MHZ模式
-
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	
+	GPIO_InitTypeDef GPIO_InitStructure;
+ 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
+ 	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
+ 	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
 	OLED_W_SCL(1);
 	OLED_W_SDA(1);
 }

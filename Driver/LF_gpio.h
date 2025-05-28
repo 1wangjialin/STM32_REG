@@ -1,7 +1,7 @@
 #ifndef __LF_GPIO_H__
 #define __LF_GPIO_H__
 
-#include "stm32f10x.h"
+#include "LF_header.h"
 
 typedef enum
 {
