@@ -401,6 +401,11 @@
           <GroupName>Driver</GroupName>
           <Files>
             <File>
+              <FileName>LF_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\LF_delay.c</FilePath>
+            </File>
+            <File>
               <FileName>LF_delay.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Driver\LF_delay.h</FilePath>

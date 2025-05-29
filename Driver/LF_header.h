@@ -7,9 +7,9 @@
 
 
 
-#define LED_TOGGLE      1
-#define LED_FLOW        1
-#define Buzzer          1
+#define LED_TOGGLE      0
+#define LED_FLOW        0
+#define Buzzer          0
 #define KEY_LED         1
 
 
