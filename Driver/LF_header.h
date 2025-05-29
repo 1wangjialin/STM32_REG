@@ -10,6 +10,7 @@
 #define LED_TOGGLE      1
 #define LED_FLOW        1
 #define Buzzer          1
+#define KEY_LED         1
 
 
 

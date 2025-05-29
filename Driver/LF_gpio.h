@@ -9,6 +9,6 @@ void GPIO_Init(void);
 void LED_Toggle(void);
 void LED_Flow(void);
 void Buzzer_Toggle(void);
-
+void Key_LED(void);
 
 #endif

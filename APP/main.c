@@ -9,6 +9,7 @@ int main (void)
 		if(LED_TOGGLE)		LED_Toggle();
 		else if(LED_FLOW)	LED_Flow();
 		else if(Buzzer)		Buzzer_Toggle();
+		else if(KEY_LED)	Key_LED();
 		
 	}
 }

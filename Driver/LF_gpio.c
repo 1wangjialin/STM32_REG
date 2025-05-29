@@ -2,24 +2,37 @@
 
 void GPIO_Init(void)
 {
+    GPIOA->CRL = 0;
+    GPIOB->CRL = 0;
+    GPIOB->CRH = 0;
     if(LED_TOGGLE)
     {
         RCC->APB2ENR |= (1<<2);
-        GPIOA->CRL |= ((3<<0) | (2<<2));
+        GPIOA->CRL |= (3<<0);
         GPIOA->BSRR = 1;
     }
     else if(LED_FLOW)
     {
         RCC->APB2ENR |= (1<<2);
-        GPIOA->CRL = 0x88888888;
+        GPIOA->CRL = 0x33333333;
         GPIOA->BSRR = 0xFFFF;
     }
     else if(Buzzer)
     {
         RCC->APB2ENR |= (1<<3);
         GPIOB->CRH |= (3<<16);
-        GPIOB->CRH &= ~(3<<18);
         GPIOB->BSRR = 0x10001000;
+    }
+    else if(KEY_LED)
+    {
+        RCC->APB2ENR |= (1<<2);
+        RCC->APB2ENR |= (1<<3);
+        GPIOA->CRL |= (3<<4);
+        GPIOA->CRL |= (3<<8);
+        GPIOA->BSRR = 0x60006;
+
+        GPIOB->CRL |= (2<<6);
+        GPIOB->CRH |= (2<<14);
     }
     
 }
@@ -48,5 +61,19 @@ void Buzzer_Toggle(void)
     GPIOA->BSRR = 0x10000000;
     Delay_ms(1000);
     GPIOA->BSRR = 0x10001000;
+}
+
+void Key_LED(void)
+{
+    if(!(GPIOB->IDR & (1<<11)))
+    {
+        Delay_ms(10);
+        GPIOA->BSRR &= (1<<2);
+    }
+    if(!(GPIOB->IDR & (1<<1)))
+    {
+        Delay_ms(10);
+        GPIOA->BSRR &= (1<<1);
+    }
 }
 
