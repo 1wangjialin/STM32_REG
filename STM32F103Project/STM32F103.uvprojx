@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\APP;..\BSP;..\BSP\src;..\BSP\inc;..\CHAL;..\Driver;..\APP\inc;..\Driver\inc;..\CHAL\inc;..\CHAL\src</IncludePath>
+              <IncludePath>..\APP;..\Driver;..\Driver\core;..\Driver\startup;..\Hardware</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -383,77 +383,17 @@
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\APP\src\main.c</FilePath>
+              <FilePath>..\APP\main.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_it.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\APP\src\stm32f10x_it.c</FilePath>
+              <FilePath>..\APP\stm32f10x_it.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_it.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\APP\inc\stm32f10x_it.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>BSP</GroupName>
-          <Files>
-            <File>
-              <FileName>BSP_led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\src\BSP_led.c</FilePath>
-            </File>
-            <File>
-              <FileName>BSP_led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\BSP\inc\BSP_led.h</FilePath>
-            </File>
-            <File>
-              <FileName>OLED_Font.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\BSP\inc\OLED_Font.h</FilePath>
-            </File>
-            <File>
-              <FileName>OLED.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\BSP\inc\OLED.h</FilePath>
-            </File>
-            <File>
-              <FileName>OLED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\src\OLED.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>CHAL</GroupName>
-          <Files>
-            <File>
-              <FileName>CHAL_led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\CHAL\src\CHAL_led.c</FilePath>
-            </File>
-            <File>
-              <FileName>CHAL_led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\CHAL\inc\CHAL_led.h</FilePath>
-            </File>
-            <File>
-              <FileName>CHAL.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\CHAL\inc\CHAL.h</FilePath>
-            </File>
-            <File>
-              <FileName>CHAL_timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\CHAL\src\CHAL_timer.c</FilePath>
-            </File>
-            <File>
-              <FileName>CHAL_timer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\CHAL\inc\CHAL_timer.h</FilePath>
+              <FilePath>..\APP\stm32f10x_it.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -461,56 +401,69 @@
           <GroupName>Driver</GroupName>
           <Files>
             <File>
+              <FileName>LF_delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\LF_delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>LF_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\LF_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>LF_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\LF_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>LF_header.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\LF_header.h</FilePath>
+            </File>
+            <File>
               <FileName>core_cm3.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\core_cm3.c</FilePath>
+              <FilePath>..\Driver\core\core_cm3.c</FilePath>
+            </File>
+            <File>
+              <FileName>core_cm3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\core\core_cm3.h</FilePath>
+            </File>
+            <File>
+              <FileName>misc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\core\misc.c</FilePath>
+            </File>
+            <File>
+              <FileName>misc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\core\misc.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\core\stm32f10x.h</FilePath>
             </File>
             <File>
               <FileName>system_stm32f10x.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\system_stm32f10x.c</FilePath>
+              <FilePath>..\Driver\core\system_stm32f10x.c</FilePath>
+            </File>
+            <File>
+              <FileName>system_stm32f10x.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\core\system_stm32f10x.h</FilePath>
             </File>
             <File>
               <FileName>startup_stm32f10x_md.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\Driver\startup\startup_stm32f10x_md.s</FilePath>
             </File>
-            <File>
-              <FileName>core_cm3.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Driver\core_cm3.h</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Driver\stm32f10x.h</FilePath>
-            </File>
-            <File>
-              <FileName>system_stm32f10x.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Driver\system_stm32f10x.h</FilePath>
-            </File>
-            <File>
-              <FileName>LF_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Driver\src\LF_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>LF_gpio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Driver\inc\LF_gpio.h</FilePath>
-            </File>
-            <File>
-              <FileName>misc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Driver\misc.c</FilePath>
-            </File>
-            <File>
-              <FileName>misc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Driver\misc.h</FilePath>
-            </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>Hardware</GroupName>
         </Group>
       </Groups>
     </Target>
