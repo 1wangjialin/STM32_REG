@@ -6,6 +6,9 @@ int main (void)
 
 	while(1)
 	{
-		LED_Toggle();
+		if(LED_TOGGLE)		LED_Toggle();
+		else if(LED_FLOW)	LED_Flow();
+		else if(Buzzer)		Buzzer_Toggle();
+		
 	}
 }

@@ -5,8 +5,12 @@
 #include "LF_delay.h"
 #include "LF_gpio.h"
 
-void Delay_us(uint32_t us);
-void Delay_ms(uint32_t ms);
-void Delay_s(uint32_t s);
+
+
+#define LED_TOGGLE      1
+#define LED_FLOW        1
+#define Buzzer          1
+
+
 
 #endif
